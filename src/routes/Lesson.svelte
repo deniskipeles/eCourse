@@ -38,15 +38,22 @@
 
   const lessonLocation = useLocation();
   
-  function addFillWhiteClassToSVGs() {
-    const svgElements = document.getElementsByTagName('img');
+  function wrapSVGImagesWithWhiteBackground() {
+    const imgs = document.querySelectorAll('img');
   
-    for (let i = 0; i < svgElements.length; i++) {
-      svgElements[i].classList.add('svg-img');
-    }
+    imgs.forEach((img) => {
+      const div = document.createElement('div');
+      div.classList.add('bg-white w-auto');
+      img.parentNode.insertBefore(div, img);
+      div.appendChild(img);
+    });
   }
+  
+
 
   onMount(async () => {
+    wrapSVGImagesWithWhiteBackground();
+    
     if ($currentUser) {
       $isLoading = true;
       await fetchRecords();
@@ -54,7 +61,6 @@
     } else {
       navigate("/login");
     }
-    addFillWhiteClassToSVGs()
   });
 
   afterUpdate(() => {
