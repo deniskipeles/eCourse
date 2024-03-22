@@ -37,6 +37,14 @@
   let currentLessonTitle = "";
 
   const lessonLocation = useLocation();
+  
+  function addFillWhiteClassToSVGs() {
+    const svgElements = document.getElementsByTagName('img');
+  
+    for (let i = 0; i < svgElements.length; i++) {
+      svgElements[i].classList.add('svg-img');
+    }
+  }
 
   onMount(async () => {
     if ($currentUser) {
@@ -46,6 +54,7 @@
     } else {
       navigate("/login");
     }
+    addFillWhiteClassToSVGs()
   });
 
   afterUpdate(() => {
@@ -450,3 +459,10 @@
     {/if}
   </main>
 {/if}
+
+
+<style>
+  .svg-img {
+  filter: invert(1) invert(1);
+}
+</style>
