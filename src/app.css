@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .base-styles {
-  @apply mx-auto max-w-[2560px] bg-white font-circular text-sm text-white antialiased;
+  @apply mx-auto max-w-[2560px] bg-dark font-circular text-sm text-white antialiased;
 }
 
 @font-face {

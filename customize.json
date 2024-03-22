@@ -1,10 +1,12 @@
 {
-  "name": "eCourse",
+  "name": "kCourse",
   "logo": "/logo.svg",
   "logo_size": 110,
 
   "colors": {
-    "main": "#158a8a",
-    "dark": "#040D12"
+    "main": "#bb1add",
+    "main1": "#158a8a",
+    "dark": "#c5c6c7"
+    "dark1": "#040D12"
   }
 }
